@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { useState, useRef } from 'react';
 import { use } from 'react';
@@ -68,7 +69,7 @@ export default function ValentinePage({ params }: PageProps) {
           {!response ? (
             <>
               <p className="text-base sm:text-lg lg:text-xl mb-4 sm:mb-6">
-                Will you be my Valentine?
+                Will you be my Valentine
               </p>
               
               <div className="space-y-3 sm:space-y-4">
@@ -77,7 +78,7 @@ export default function ValentinePage({ params }: PageProps) {
                   className="w-full bg-pink-500 text-white py-2 sm:py-3 px-4 rounded-md hover:bg-pink-600 transition-colors"
                   style={{ fontSize: `${Math.min(1 + noCount * 0.1, 2)}rem` }}
                 >
-                  Yes! ❤️
+                  Yes❤️
                 </button>
                 
                 <button 
@@ -96,7 +97,7 @@ export default function ValentinePage({ params }: PageProps) {
               {response === "yes" && (
                 <div className="space-y-4">
                   <p className="text-xl sm:text-2xl lg:text-3xl text-pink-600 mb-4">
-                    💖 Yay! Happy Valentine's Day! 💖
+                    💖 Yay! Happy Valentine&apos;s Day! 💖
                   </p>
                   <div className="relative rounded-lg overflow-hidden max-w-full">
                     <video
@@ -121,12 +122,12 @@ export default function ValentinePage({ params }: PageProps) {
         </div>
         
         <div className="mt-6 sm:mt-8">
-          <a
+          <Link
             href="/"
             className="text-sm sm:text-base text-pink-600 hover:text-pink-700 underline"
           >
             Create your own Valentine page
-          </a>
+          </Link>
         </div>
       </div>
     </main>
