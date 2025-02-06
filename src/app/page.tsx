@@ -1,10 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 
-
-export default function ValentinePage() {
+function ValentinePageContent() {
   const [name, setName] = useState<string>("")
   const [generatedUrl, setGeneratedUrl] = useState<string>("")
   const [showContent, setShowContent] = useState(false)
@@ -90,6 +89,18 @@ export default function ValentinePage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function ValentinePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-b from-pink-100 to-red-100 flex items-center justify-center">
+        <div className="text-pink-600 text-xl">Loading...</div>
+      </div>
+    }>
+      <ValentinePageContent />
+    </Suspense>
   )
 }
 
