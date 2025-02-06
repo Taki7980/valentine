@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
-import Header from "./components/Header"
-import MainContent from "./components/MainContent"
-import PersonalizedLink from "./components/PersonalizedLink"
+
 
 export default function ValentinePage() {
   const [name, setName] = useState<string>("")
@@ -93,36 +91,5 @@ export default function ValentinePage() {
       </div>
     </div>
   )
-}
-
-export function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-pink-100">
-      <div className="max-w-md w-full text-center">
-        <h1 className="text-4xl font-bold text-pink-600 mb-8">My Valentine</h1>
-        
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">Create Your Valentine Page</h2>
-          <form className="space-y-4" action={`/${encodeURIComponent(name)}`} method="get">
-            <div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your valentine's name"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-pink-500 text-white py-2 px-4 rounded-md hover:bg-pink-600 transition-colors"
-            >
-              Create Page
-            </button>
-          </form>
-        </div>
-      </div>
-    </main>
-  );
 }
 
